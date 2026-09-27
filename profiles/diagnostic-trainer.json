@@ -1,0 +1,80 @@
+{
+  "schema": "prospect_forge_icp_v1",
+  "profile_id": "diagnostic-trainer",
+  "product_name": "Fictional demonstration product",
+  "value_prop": "does the thing",
+  "proof_points": [
+    "Synthetic example; not customer evidence"
+  ],
+  "industries": [
+    "healthtech"
+  ],
+  "size_bands": [
+    {
+      "min": 10,
+      "max": 5000
+    }
+  ],
+  "signals": [
+    {
+      "id": "llm",
+      "weight": 3,
+      "description": "ships an LLM",
+      "keywords": [
+        "AI assistant"
+      ]
+    },
+    {
+      "id": "funding",
+      "weight": 2,
+      "description": "recently raised",
+      "keywords": [
+        "Series A"
+      ]
+    },
+    {
+      "id": "regulatory",
+      "weight": 4,
+      "description": "regulatory pressure",
+      "keywords": [
+        "FTC"
+      ]
+    }
+  ],
+  "approach_roles": [
+    "Chief Compliance Officer",
+    "Chief Medical Officer"
+  ],
+  "channels": [
+    {
+      "id": "direct_email",
+      "label": "email"
+    }
+  ],
+  "default_channel": "direct_email",
+  "angles": [
+    {
+      "id": "reg-angle",
+      "signal_ids": [
+        "regulatory"
+      ],
+      "subject": "Grounding for {company}",
+      "template": "Hi {company} \u2014 {signal_evidence}. {value_prop}. {proof_point}."
+    },
+    {
+      "id": "llm-angle",
+      "signal_ids": [
+        "llm"
+      ],
+      "subject": "Audits for {company}",
+      "approach_role": "Chief Medical Officer",
+      "template": "Hi {company} \u2014 {signal_evidence}. {value_prop}. {proof_point}."
+    },
+    {
+      "id": "default",
+      "signal_ids": [],
+      "subject": "Idea for {company}",
+      "template": "Hi {company} \u2014 {signal_evidence}. {value_prop}. {proof_point}."
+    }
+  ]
+}
